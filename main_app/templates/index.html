@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,5 +11,15 @@
 </head>
 <body>
     <h1>Wacky Widgets</h1>
+    <hr>
+    {% if widgets|length == 0 %}
+    <p>No Widgets added yet...</p>
+    {% else %}
+    <ul>
+        {% for widget in widgets%}
+        <li> {{widget}} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 </html>
